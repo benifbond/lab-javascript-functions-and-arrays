@@ -1,25 +1,71 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
-
+function maxOfTwoNumbers(max, min) {
+if (max > min){
+  return (max);
+} else {
+  return(min);
+}
+}
+maxOfTwoNumbers(2,4);
 
 
 // Iteration #2: Find longest word
+
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(words) {
+ if (words.length === 0) {
+    return null;}
+  let longest =words[0];
+  for (let i = 1; i < words.length; i++) {
+    
+
+      if (words[i].length > longest.length){
+
+        longest =words[i];
+  }
+}
+  return longest;
+}
+
+
+
+console.log(findLongestWord(words))
+
+
+
 
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
-
-
+     let sum =numbers.reduce(function  (a, b) {
+      
+        return a + b;
+    } ,0)
+    
+   
+    function sumNumbers(pizza) {
+ 
+      const result = pizza.reduce(function  (a, b) {
+            
+          return a + b;
+      } ,0)
+      
+      return  result
+      }
+      console.log(sumNumbers);
+    
 
 // Iteration #3.1 Bonus:
-function sum() {}
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
 
+// should return: 57
+function sum(c,a) {
+  return mixedArr.reduce((c, a) => Number(c) + Number(a));
+
+}console.log(sum);
 
 
 // Iteration #4: Calculate the average
@@ -117,7 +163,7 @@ if (typeof module !== 'undefined') {
   module.exports = {
     maxOfTwoNumbers,
     findLongestWord,
-    sumNumbers,
+  sumNumbers,
     sum,
     averageNumbers,
     averageWordLength,
